@@ -1,5 +1,5 @@
 close all; clear all;
-f=fopen('test08_45s.dat','rb');
+f=fopen('test14_45w.dat','rb');
 D=fread(f,[4, inf],'int16');
 fclose(f);
 T = D.';
@@ -39,7 +39,7 @@ smoothed_squared_derivative = smooth(squared_derivative,5);
 subplot(4,1,4);plot(Tempo1_derivative, smoothed_squared_derivative);title('Quadrática Suavizada');
 
 % Intervalo entre picos do QRS
-threshold = 0.7*max(signal);
+threshold = 0.5*max(signal);
 i = 1; 
 for index = 1:length(signal)
     if signal(index) > threshold
